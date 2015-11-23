@@ -2,7 +2,7 @@ import java.lang.reflect.Field;
 
 public class Stringify {
 
-	public static String toString(Object o) {
+	public static synchronized String toString(Object o) {
 
 		// Book book = new Book("Kurk Mantolu Madonna", 2015);
 
