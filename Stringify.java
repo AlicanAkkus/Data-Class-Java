@@ -9,9 +9,9 @@ public class Stringify {
 		try {
 			Class<?> c = o.getClass();
 
-			Field field[] = c.getDeclaredFields();
+			Field fields[] = c.getDeclaredFields();
 			StringBuilder builder = new StringBuilder("[Object hashcode] : [" + o.hashCode() + "]\n");
-			for (Field f : field) {
+			for (Field f : fields) {
 				Field declaredField = c.getDeclaredField(f.getName());
 				declaredField.setAccessible(true);
 				builder.append("[Field Name] : [" + declaredField.getName() + "]\t[Field Value] : [" + declaredField.get(o) + "]\n");
