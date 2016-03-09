@@ -23,15 +23,7 @@ Above code returned String for example;
 {
 	name : Kurk Mantolu Madonna
 	id : 2015
-	eBook : {
-		name : Kuyucaklı Yusuf
-		id : 2015
-	}
 
-	epubBook : {
-		name : İçimizdeki Şeytan
-		id : 2015
-	}
 }
 
 
