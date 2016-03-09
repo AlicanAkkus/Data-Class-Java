@@ -12,7 +12,29 @@ Book book = new Book("Kurk Mantolu Madonna", 2015);// name , id
 Stringify.toString(book);
 
 Above code returned String for example;
-[Object hashcode] : [33168289]
-[Field Name] : [name]	[Field Value] : [Kurk Mantolu Madonna]
-[Field Name] : [id]	[Field Value] : [2015]
+
+*******************BEGIN*******************
+{
+	name : Kurk Mantolu Madonna
+	id : 2015
+	eBook : 
+*******************BEGIN*******************
+{
+	name : Kuyucaklı Yusuf
+	id : 2015
+}
+####################END####################
+
+	epubBook : 
+*******************BEGIN*******************
+{
+	name : İçimizdeki Şeytan
+	id : 2015
+}
+####################END####################
+
+}
+####################END####################
+
+
 
