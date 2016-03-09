@@ -2,27 +2,48 @@ import java.lang.reflect.Field;
 
 public class Stringify {
 
-	public static synchronized String toString(Object o) {
+	public static synchronized String toString(Object o, RETURN_TYPE type) {
 
-		// Book book = new Book("Kurk Mantolu Madonna", 2015);
+		// Book book = new Book("ASD", 11);
 
 		try {
 			Class<?> c = o.getClass();
 
 			Field fields[] = c.getDeclaredFields();
-			StringBuilder builder = new StringBuilder("[Object hashcode] : [" + o.hashCode() + "]\n");
+			StringBuilder builder = new StringBuilder("\n*******************BEGIN*******************\n");
+			builder.append("{\n");
+			boolean complexObject = false;
+			//
+			// if (type == RETURN_TYPE.STRING) {
+			// builder.append("{\n");
+			// }
+
 			for (Field f : fields) {
 				Field declaredField = c.getDeclaredField(f.getName());
-				declaredField.setAccessible(true);
-				builder.append("[Field Name] : [" + declaredField.getName() + "]\t[Field Value] : [" + declaredField.get(o) + "]\n");
+				declaredField.setAccessible(true);// for private variable
+
+				builder.append("\t").append(declaredField.getName()).append(" : ");
+				builder.append(declaredField.get(o).toString()).append("\n");
+
 			}
 
-			return builder.toString();
+			if (complexObject)
+				builder.append("\t");
+
+			builder.append("}");
+			builder.append("\n####################END####################\n");
+
+			String result = builder.toString();
+			return result;
 
 		} catch (Exception e) {
+			e.printStackTrace();
 			return "";
 		}
 
 	}
+}
 
+enum RETURN_TYPE {
+	XML, JSON, STRING;
 }
