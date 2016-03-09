@@ -1,13 +1,8 @@
-public class TestClass {
+public class Test {
 
 	public static void main(String[] args) {
 		Book book = new Book("Kurk Mantolu Madonna", 2015);
 
-		System.out.println(Stringify.toString(book));
-	  //check your console as;
-	  //[Object hashcode] : [33168289]
-      [Field Name] : [name]	[Field Value] : [Kurk Mantolu Madonna]
-      [Field Name] : [id]	[Field Value] : [2015]
-	  
+		System.out.println(book);
 	}
 }
