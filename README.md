@@ -24,7 +24,7 @@ When you invoked book.toString() in anything your code you will be display as fo
 
 Above code returned String for example;
 
-``` json
+``` java
 {
 	name : Kurk Mantolu Madonna
 	id : 2015
