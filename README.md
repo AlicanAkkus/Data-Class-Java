@@ -13,28 +13,20 @@ Stringify.toString(book);
 
 Above code returned String for example;
 
-*******************BEGIN*******************
 {
 	name : Kurk Mantolu Madonna
 	id : 2015
-	eBook : 
-*******************BEGIN*******************
-{
-	name : Kuyucaklı Yusuf
-	id : 2015
-}
-####################END####################
+	eBook : {
+		name : Kuyucaklı Yusuf
+		id : 2015
+	}
 
-	epubBook : 
-*******************BEGIN*******************
-{
-	name : İçimizdeki Şeytan
-	id : 2015
+	epubBook : {
+		name : İçimizdeki Şeytan
+		id : 2015
+	}
 }
-####################END####################
 
-}
-####################END####################
 
 
 
