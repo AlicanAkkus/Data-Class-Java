@@ -42,6 +42,9 @@ public class Stringify {
 		}
 
 	}
+	public static String toString(Object o) {
+		return toString(o,RETURN_TYPE.STRING);
+	}
 }
 
 enum RETURN_TYPE {
