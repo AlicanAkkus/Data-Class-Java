@@ -20,7 +20,16 @@ And then you create your java bean as follow Book
 Book book = new Book("Kurk Mantolu Madonna", 2015);// name , id
 ```
 
+Default print format is pretty. You can use pure name value string such as;
+
 When you invoked book.toString() in anything your code you will be display as follow string;
+
+``` java
+@Override
+	public String toString() {
+		return Stringify.toString(this, ReturnType.STRING);
+	}
+```
 
 Above code returned String for example;
 
@@ -30,6 +39,14 @@ Above code returned String for example;
 	id : 2015
 
 }
+```
+
+Default print format is pretty. You can use pure name value string such as;
+``` java
+@Override
+	public String toString() {
+		return Stringify.toString(this, ReturnType.STRING, false);
+	}
 ```
 
 
