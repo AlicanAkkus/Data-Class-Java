@@ -48,7 +48,11 @@ Default print format is pretty. You can use pure name value string such as;
 		return Stringify.toString(this, ReturnType.STRING, false);
 	}
 ```
+Above code returned String for example;
 
+``` java
+{ name : Kurk Mantolu Madonna, id : 2015 }
+```
 
 
 
