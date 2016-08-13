@@ -1,6 +1,9 @@
 package com.wora.stringify;
 
 import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
+
 import com.wora.enums.ReturnType;
 
 
@@ -18,18 +21,17 @@ import com.wora.enums.ReturnType;
 
 public class Stringify {
 	
+	private static StringifyUtils utils = new StringifyUtils();
 	
 	/**
-	 * @param o to printed
+	 * @param o to be printed
 	 * @param type of return type such as string, xml, json. not yet implemented
 	 * @return all class member returned (name : value) pair
 	 * */
-	public static synchronized String toString(Object o, ReturnType type) {
+	public static synchronized String toString(Object o, ReturnType type, boolean prettyPrint) {
 
-		// Book book = new Book("ASD", 11);
-
-		StringBuilder builder = new StringBuilder("\n*******************BEGIN*******************\n");
-		builder.append("{\n");
+		StringBuilder builder = new StringBuilder("{\n");
+		ConcurrentHashMap<String, String> fieldsMap = new ConcurrentHashMap<String, String>();
 		try {
 			Class<?> c = o.getClass();
 
@@ -38,21 +40,18 @@ public class Stringify {
 			for (Field f : fields) {
 				Field declaredField = c.getDeclaredField(f.getName());
 				declaredField.setAccessible(true);// for private variable
-
-				builder.append("\t").append(declaredField.getName()).append(" : ");
+				
+				String fieldName = declaredField.getName();
+				String fieldValue = "UNKNOW";
 				if(declaredField.get(o) != null){
-					builder.append(declaredField.get(o).toString()).append("\n");
-				}else{
-					builder.append("Unknow").append("\n");
+					fieldValue = declaredField.get(o).toString();
 				}
-
+				
+				fieldsMap.put(fieldName, fieldValue);
 			}
-
-
-			builder.append("}");
-			builder.append("\n####################END####################\n");
-
-			String result = builder.toString();
+			
+			
+			String result = utils.toString(fieldsMap, prettyPrint);
 			return result;
 
 		} catch (Exception e) {
@@ -63,6 +62,6 @@ public class Stringify {
 	}
 	
 	public static String toString(Object o) {
-		return toString(o,ReturnType.STRING);
+		return toString(o,ReturnType.STRING, true);
 	}
 }

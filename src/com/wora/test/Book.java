@@ -31,7 +31,7 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return Stringify.toString(this, ReturnType.STRING);
+		return Stringify.toString(this, ReturnType.STRING, false);
 	}
 
 }
