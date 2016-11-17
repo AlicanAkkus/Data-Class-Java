@@ -1,7 +1,7 @@
 # Data-Class-Java
-# Such as Scala case class Java Data class with reflection api
+# Data class in java with Reflection such as Scala case class
 
-When we print the object to output stream printed hashcode of object. I'm created exercise of Java reflection. When invoked toString() method return all class variable name and value pair as String.
+When we print the object to output stream, java will be print hashcode of object. I'm created exercise of Java reflection. When you invoke the toString() method, return all class variable withh pretty print name and value pair as String.
 
 How use it?
 
@@ -15,12 +15,12 @@ public String toString(){
 }
 ```
 
-And then you create your java bean as follow Book
+And then you create your java bean as follow; Book
 ``` java
 Book book = new Book("Kurk Mantolu Madonna", 2015);// name , id
 ```
 
-Default print format is pretty. You can use pure name value string such as;
+Default print format is pretty print. You can use pure name value string such as;
 
 When you invoked book.toString() in anything your code you will be display as follow string;
 
